@@ -32,12 +32,7 @@ To run this project, you need Python and the following libraries:
     pip install -r requirements.txt
     ```
 
-3. Download the MovieLens 100k dataset from [here](https://grouplens.org/datasets/movielens/100k/) and place the `u.data` and `u.item` files in a folder named `ml-100k` inside the project directory.
-
-4. Get a TMDb API key by signing up at [TMDb](https://www.themoviedb.org/) and add it to the `tmdb_fetcher.py` file:
-    ```python
-    API_KEY = 'your_tmdb_api_key'
-    ```
+3. The MovieLens dataset and TMDb API key are already included, so no extra setup is needed for those.
 
 ## How to Run
 
@@ -55,14 +50,13 @@ To run this project, you need Python and the following libraries:
 - **Genre Selection**: Choose from popular genres such as Action, Comedy, Drama, etc.
 - **Personalized Recommendations**: Based on your previous movie ratings, the app suggests movies using collaborative filtering (SVD).
 - **TMDb API**: Fetches movie details such as title, rating, and overview from the TMDb database based on the genre and rating.
-  
+
 ## Customization
 
 You can expand the recommendation system by adding more genres or integrating with other movie databases. You can also implement additional filtering options like runtime or actors.
 
 ## Known Issues
 
-- Make sure the `u.data` and `u.item` files from MovieLens 100k are placed in the `ml-100k` folder.
 - The app relies on an internet connection for fetching TMDb data.
 
 ## License
