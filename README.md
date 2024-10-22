@@ -61,4 +61,5 @@ You can expand the recommendation system by adding more genres or integrating wi
 
 ## License
 
-This project is open-source. Feel free to modify and use it as needed.
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
