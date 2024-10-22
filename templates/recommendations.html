@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Movie Recommendations</h1>
+
+        <h2>Based on Your Genre and Rating Preferences (TMDb):</h2>
+        <ul>
+            {% if tmdb_movies %}
+                {% for movie in tmdb_movies %}
+                    <li>
+                        <strong>{{ movie['title'] }}</strong><br>
+                        Rating: {{ movie['vote_average'] }}/10<br>
+                        Release Date: {{ movie['release_date'] }}<br>
+                        Overview: {{ movie['overview'] }}
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li>No TMDb recommendations found matching your preferences.</li>
+            {% endif %}
+        </ul>
+
+        <h2>Personalized Recommendations Based on Your History (Collaborative Filtering):</h2>
+        <ul>
+            {% if model_recommendations %}
+                {% for movie in model_recommendations %}
+                    <li>{{ movie }}</li>
+                {% endfor %}
+            {% else %}
+                <li>No personalized recommendations available. Please provide a valid user ID with ratings history.</li>
+            {% endif %}
+        </ul>
+
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>

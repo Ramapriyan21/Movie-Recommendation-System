@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Get Movie Recommendations</h1>
+        <form action="/" method="POST">
+            <label for="genre">Choose a Genre:</label>
+            <select name="genre" id="genre">
+                <option value="action">Action</option>
+                <option value="comedy">Comedy</option>
+                <option value="drama">Drama</option>
+                <option value="sci-fi">Sci-Fi</option>
+                <option value="romance">Romance</option>
+            </select>
+
+            <label for="rating">Minimum Rating (1-10):</label>
+            <input type="number" name="rating" step="0.1" min="1" max="10" required>
+
+            <label for="user_id">Enter User ID for Personalized Recommendations:</label>
+            <input type="number" name="user_id" placeholder="1" required>
+
+            <button type="submit">Get Recommendations</button>
+        </form>
+    </div>
+</body>
+</html>
